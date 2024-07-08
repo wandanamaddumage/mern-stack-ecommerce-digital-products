@@ -18,7 +18,7 @@ app.listen(process.env.PORT, () =>
 );
 
 mongoose
-  .connect(process.env.mongoDb)
+  .connect(process.env.mongoDb, { bufferCommands: false })
   .then(() => console.log("Database is connected"))
   .catch((error) => console.log(error));
 
