@@ -1,19 +1,12 @@
-import { typography } from "@tailwindcss/typography";
-import daisyui from "daisyui";
-
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./public/index.html",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },
   darkMode: "class",
-  plugins: [typography, daisyui],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
     themes: [
       {
@@ -27,9 +20,7 @@ export default {
       },
       {
         business: {
-          ...import("daisyui/src/theming/themes").then(
-            (module) => module["business"]
-          ),
+          ...require("daisyui/src/theming/themes")["business"],
         },
       },
       "light",
